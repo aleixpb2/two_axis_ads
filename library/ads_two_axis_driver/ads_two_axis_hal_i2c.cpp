@@ -24,7 +24,7 @@ static uint8_t _address = ADS_DEFAULT_ADDR;
 
 volatile bool _ads_int_enabled = false;
 
-/* Device I2C address array. Use ads_hal_update_addr() to 
+/* Device I2C address array. Use ads_hal_update_device_addr() to
  * populate this array. */
 static uint8_t ads_addrs[ADS_COUNT] = {
 	ADS_DEFAULT_ADDR,

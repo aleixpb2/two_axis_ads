@@ -8,9 +8,9 @@
 #include <stdint.h>
 #include "ads_two_axis_err.h"
 
-#define ADS_TRANSFER_SIZE		(5)
+#define ADS_TRANSFER_SIZE (5)
 
-#define ADS_COUNT				(10)				// Number of ADS devices attached to bus
+#define ADS_COUNT (1)  // Number of ADS devices attached to bus
 
 
 void ads_hal_delay(uint16_t delay_ms);

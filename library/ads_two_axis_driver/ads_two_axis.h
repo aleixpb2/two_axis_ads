@@ -70,7 +70,7 @@ int ads_two_axis_enable_interrupt(bool enable);
 
 /**
  * @brief Updates the I2C address of the selected ADS. The default address 
- *		  is 0x12. Use this function to program an ADS to allow multiple
+ *		  is 0x13. Use this function to program an ADS to allow multiple
  *		  devices on the same I2C bus.
  *
  * @param	device	device number of the device that is being updated
