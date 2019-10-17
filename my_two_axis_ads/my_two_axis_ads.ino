@@ -7,7 +7,7 @@
 #include "ads_two_axis.h"
 
 #define ADS_RESET_PIN       (3)         // Pin number attached to ads reset line.
-#define ADS_INTERRUPT_PIN   (4)         // Pin number attached to the ads data ready line. 
+#define ADS_INTERRUPT_PIN   (4)         // Pin number attached to the ads data ready line.
 
 // function prototypes
 void ads_data_callback(float * sample);
@@ -54,6 +54,11 @@ void deadzone_filter(float * sample)
 
 void ads_data_callback(float * sample)
 {
+  Serial.print("Sample: ");
+  Serial.print((float)sample[0]);
+  Serial.print(",");
+  Serial.println((float)sample[1]);
+
   // Low pass IIR filter
   signal_filter(sample);
 
@@ -130,8 +135,10 @@ void parse_serial_port(void)
       ads_two_axis_calibrate(ADS_CALIBRATE_PERP, 90);
     else if(key == 'c')
       ads_two_axis_calibrate(ADS_CALIBRATE_CLEAR, 0);
-    else if(key == 'r')
+    else if(key == 'r'){
       ads_two_axis_run(true);
+      Serial.println("Running"); 
+    }
     else if(key == 's')
       ads_two_axis_run(false);
     else if(key == 'f')
