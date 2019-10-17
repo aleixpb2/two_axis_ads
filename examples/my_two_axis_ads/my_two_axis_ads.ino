@@ -54,10 +54,10 @@ void deadzone_filter(float * sample)
 
 void ads_data_callback(float * sample)
 {
-  Serial.print("Sample: ");
-  Serial.print((float)sample[0]);
-  Serial.print(",");
-  Serial.println((float)sample[1]);
+  //Serial.print("Sample: ");
+  //Serial.print((float)sample[0]);
+  //Serial.print(",");
+  //Serial.println((float)sample[1]);
 
   // Low pass IIR filter
   signal_filter(sample);
@@ -112,7 +112,7 @@ void loop() {
     newData = false;
 
     Serial.print(ang[0]); 
-    Serial.print(","); 
+    Serial.print(" "); 
     Serial.println(ang[1]);
   }
   
